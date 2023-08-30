@@ -66,7 +66,7 @@ endmodule
 
 module LBUF1K
 (
-    
+    input    dn_clk,
     input				CL0,
 	input	 [9:0]	AD0,
 	input				WR0,

@@ -31,6 +31,7 @@ module DIGDUG_VIDEO
 
 	input 				V_FLIP,
 
+    input               dn_clk,
 	input					ROMCL,		// Downloaded ROM image
 	input  [15:0]		ROMAD,
 	input	  [7:0]		ROMDT,
@@ -81,6 +82,8 @@ DIGDUG_SPRITE sprite
 
 	.SPCOL(SPCOL),
 	.V_FLIP(V_FLIP),
+	
+	.dn_clk(dn_clk),
 	.ROMCL(ROMCL),.ROMAD(ROMAD),.ROMDT(ROMDT),.ROMEN(ROMEN)
 );
 

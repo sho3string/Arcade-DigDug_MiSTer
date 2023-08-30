@@ -23,6 +23,7 @@ module DIGDUG_SPRITE
 	
 	input 			V_FLIP,
 
+    input           dn_clk,
 	input				ROMCL,		// Downloaded ROM image
 	input  [15:0]	ROMAD,
 	input	  [7:0]	ROMDT,
