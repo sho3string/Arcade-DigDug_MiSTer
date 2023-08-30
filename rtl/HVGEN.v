@@ -6,7 +6,7 @@
 
 `timescale 1 ps / 1 ps
 
-module HVGEN
+module hvgen
 (
 	output  [8:0]		HPOS,
 	output  [8:0]		VPOS,

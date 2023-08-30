@@ -6,12 +6,12 @@
 
 `timescale 1 ps / 1 ps
 
-module FPGA_DIGDUG
+module fpga_digdug
 (
 	input          RESET,      // RESET
 	input          MCLK,       // Master Clock (48.0MHz) = VCLKx8
 
-	input   [7:0]	INP0,			// Control Panel
+	input   [7:0]	INP0,	   // Control Panel
 	input   [7:0]	INP1,
 	input   [7:0]	DSW0,
 	input   [7:0]	DSW1,
@@ -27,6 +27,7 @@ module FPGA_DIGDUG
 
 	input 			V_FLIP,		// Vertical flip video
 
+    input           dn_clk,
 	input				ROMCL,	// Downloaded ROM image
 	input  [15:0]	ROMAD,
 	input	  [7:0]	ROMDT,
@@ -39,6 +40,7 @@ module FPGA_DIGDUG
 	input  [7:0]	hs_data_in,
 	input				hs_write,
 	input				hs_access
+
 );
 
 // Common I/O Device Bus
@@ -58,6 +60,7 @@ wire	[2:0]	RSTS,IRQS,NMIS;
 
 DIGDUG_CORES cores
 (
+    .dn_clk(dn_clk),
 	.MCLK(MCLK),
 	.RSTS(RSTS),.IRQS(IRQS),.NMIS(NMIS),
 

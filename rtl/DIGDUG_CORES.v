@@ -9,7 +9,7 @@
 module DIGDUG_CORES
 (
 	input				MCLK,			// Clock (48.0MHz)
-
+    
 	input  [2:0]	RSTS,			// RESET [2:0]
 	input  [2:0]	IRQS,			//   IRQ [2:0]
 	input  [2:0]	NMIS,			//   NMI [2:0]
@@ -22,7 +22,7 @@ module DIGDUG_CORES
 	output			DEV_WR,
 	output [7:0]	DEV_DI,
 
-
+    input           dn_clk,
 	input				ROMCL,		// Downloaded ROM image
 	input  [15:0]	ROMAD,
 	input	  [7:0]	ROMDT,
