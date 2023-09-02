@@ -27,7 +27,6 @@ module fpga_digdug
 
 	input 			V_FLIP,		// Vertical flip video
 
-    input           dn_clk,
 	input				ROMCL,	// Downloaded ROM image
 	input  [15:0]	ROMAD,
 	input	  [7:0]	ROMDT,
@@ -67,7 +66,6 @@ DIGDUG_CORES cores
 	.DEV_RD(DEV_RD),.DEV_DV(DEV_DV),.DEV_DO(DEV_DO),
 	.DEV_WR(DEV_WR),.DEV_DI(DEV_DI),
 
-    .dn_clk(dn_clk),
 	.ROMCL(ROMCL),.ROMAD(ROMAD),.ROMDT(ROMDT),.ROMEN(ROMEN),
 
 	.PAUSE(PAUSE)
@@ -160,7 +158,6 @@ DIGDUG_VIDEO video
 	
 	.V_FLIP(V_FLIP),
     
-    .dn_clk(dn_clk),
 	.ROMCL(ROMCL),.ROMAD(ROMAD),.ROMDT(ROMDT),.ROMEN(ROMEN)
 );
 

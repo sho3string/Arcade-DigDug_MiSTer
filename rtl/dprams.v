@@ -66,7 +66,6 @@ endmodule
 
 module LBUF1K
 (
-    input    dn_clk,
     input				CL0,
 	input	 [9:0]	AD0,
 	input				WR0,
@@ -80,7 +79,7 @@ module LBUF1K
 );
 
 dualport_2clk_ram #(.FALLING_A(1),.ADDR_WIDTH(10),.DATA_WIDTH(8)) lbuf(
-	.clock_a(dn_clk),
+	.clock_a(CL0),
 	.address_a(AD0),
 	.data_a(DI0),
 	.wren_a(WR0),
