@@ -79,15 +79,8 @@ module LBUF1K
 	output [7:0]	DO1
 );
 
-dualport_2clk_ram #(
-
-    .FALLING_A(1),
-    .ADDR_WIDTH(10),
-    .DATA_WIDTH(8)
-)
-lbuf
-(
-    .clock_a(dn_clk),
+dualport_2clk_ram #(.FALLING_A(1),.ADDR_WIDTH(10),.DATA_WIDTH(8)) lbuf(
+	.clock_a(dn_clk),
 	.address_a(AD0),
 	.data_a(DI0),
 	.wren_a(WR0),
