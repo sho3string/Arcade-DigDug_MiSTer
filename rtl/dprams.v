@@ -92,7 +92,6 @@ dualport_2clk_ram #(.FALLING_A(1),.ADDR_WIDTH(10),.DATA_WIDTH(8)) lbuf(
 	.q_b(DO1)
 );
 
-
 endmodule
 
 

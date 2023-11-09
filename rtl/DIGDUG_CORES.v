@@ -22,13 +22,12 @@ module DIGDUG_CORES
 	output			DEV_WR,
 	output [7:0]	DEV_DI,
 
-    input           dn_clk,
-	input				ROMCL,		// Downloaded ROM image
+	input			ROMCL,		// Downloaded ROM image
 	input  [15:0]	ROMAD,
 	input	  [7:0]	ROMDT,
-	input				ROMEN,
+	input			ROMEN,
 
-	input				PAUSE
+	input			PAUSE
 );
 
 //-----------------------------------------------
