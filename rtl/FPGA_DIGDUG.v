@@ -27,18 +27,18 @@ module fpga_digdug
 
 	input 			V_FLIP,		// Vertical flip video
 
-	input				ROMCL,	// Downloaded ROM image
+	input			ROMCL,	// Downloaded ROM image
 	input  [15:0]	ROMAD,
 	input	  [7:0]	ROMDT,
-	input				ROMEN,
+	input			ROMEN,
 
 	input 			PAUSE,
 
 	input  [10:0]	hs_address,
 	output [7:0]	hs_data_out,
 	input  [7:0]	hs_data_in,
-	input				hs_write,
-	input				hs_access
+	input			hs_write,
+	input			hs_access
 
 );
 

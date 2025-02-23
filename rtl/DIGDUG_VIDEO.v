@@ -31,7 +31,7 @@ module DIGDUG_VIDEO
 
 	input 				V_FLIP,
 
-	input					ROMCL,		// Downloaded ROM image
+	input				ROMCL,		// Downloaded ROM image
 	input  [15:0]		ROMAD,
 	input	  [7:0]		ROMDT,
 	input					ROMEN

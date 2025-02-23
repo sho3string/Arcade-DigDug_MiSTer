@@ -78,7 +78,12 @@ module LBUF1K
 	output [7:0]	DO1
 );
 
-dualport_2clk_ram #(.FALLING_A(1),.ADDR_WIDTH(10),.DATA_WIDTH(8)) lbuf(
+// Linebuffer
+dualport_2clk_ram #(
+     .ADDR_WIDTH(10),
+     .DATA_WIDTH(8)
+) lbuf(
+        
 	.clock_a(CL0),
 	.address_a(AD0),
 	.data_a(DI0),
@@ -91,6 +96,7 @@ dualport_2clk_ram #(.FALLING_A(1),.ADDR_WIDTH(10),.DATA_WIDTH(8)) lbuf(
 	.wren_b(WR1),
 	.q_b(DO1)
 );
+
 
 endmodule
 
@@ -107,10 +113,10 @@ module DLROM #(parameter AW=0,parameter DW=0)
 	input							WE1
 );
 
-reg [DW-1:0] core[0:((2**AW)-1)] /* synthesis ramstyle = "no_rw_check, M10K" */;
+reg [(DW-1):0] core[0:((2**AW)-1)] /* synthesis ramstyle = "no_rw_check, M10K" */;
 
 always @(posedge CL0) DO0 <= core[AD0];
-always @(posedge CL1) if (WE1) core[AD1] <= DI1;
+always @(negedge CL1) if (WE1) core[AD1] <= DI1;
 
 
 endmodule
@@ -129,10 +135,10 @@ module DLROMe #(parameter AW=0,parameter DW=0)
 	input							WE1
 );
 
-reg [DW-1:0] core[0:((2**AW)-1)] /* synthesis ramstyle = "no_rw_check, M10K" */;
+reg [(DW-1):0] core[0:((2**AW)-1)] /* synthesis ramstyle = "no_rw_check, M10K" */;
 
 always @(posedge CL0) if (RE0) DO0 <= core[AD0];
-always @(posedge CL1) if (WE1) core[AD1] <= DI1;
+always @(negedge CL1) if (WE1) core[AD1] <= DI1;
 
 endmodule
 
