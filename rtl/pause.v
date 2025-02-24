@@ -27,7 +27,7 @@
   
  Version history:
  0001 - 2021-03-15 -	First marked release
- 0002 - 2021-08-28 -	Add optional output of dim_video signal (currently used by Galaga)
+ 0002 - 2021-08-28 -	Add optional output of dim_video signal (currently used by DigDug)
 ============================================================================
 */
 

@@ -78,7 +78,7 @@ module LBUF1K
 	output [7:0]	DO1
 );
 
-// Linebuffer
+// Linebuffer ram device
 dualport_2clk_ram #(
      .ADDR_WIDTH(10),
      .DATA_WIDTH(8)
